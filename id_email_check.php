@@ -5,12 +5,12 @@
     $email_check = $conn->query($email_check);
     
     if ($id_check->num_rows > 0) {
-        echo "<script>console.log('registered id');</script>";
+        echo "<script>console.log('registered id');histroy.back();</script>";
         $conn->close();
         exit;
     }
     if ($email_check->num_rows > 0) {
-        echo "<script>console.log('registered email');</script>";
+        echo "<script>console.log('registered email');histroy.back();</script>";
         $conn->close();
         exit;
     }

@@ -5,7 +5,7 @@
         <title>register test</title>
     </head>
     <body>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form method="post" action="check.php">
             <p>ID : <input type="text" name="id" required /></p>
             <p>PW : <input type="password" name="pw" required /></p>
             <p>E-mail : <input type="email" name="email" required /></p>
@@ -13,8 +13,5 @@
             <p>Sex : <input type="radio" name="sex" value="male" />Male <input type="radio" name="sex" value="female" /> Female</p>
             <input type="submit" value="register" />
         </form>
-        <?php
-            include 'check.php';
-        ?>
     </body>
 </html>

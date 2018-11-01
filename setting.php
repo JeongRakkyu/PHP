@@ -13,3 +13,4 @@
         $conn->close();
         exit;
     }
+?>

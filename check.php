@@ -12,20 +12,20 @@
     $sex = clear_data($_POST['sex']);
 
     if (!preg_match("/^[a-zA-Z _0-9]*$/", $id)) {
-        echo "<script>alert('input correct id');</script>";
+        echo "<script>alert('input correct id');history.back();</script>";
         exit;
     }
     if (!preg_match("/^[a-zA-Z0-9_!@#$%^&*]*$/", $pw)) {
-        echo "<script>alert('input correct pw');</script>";
+        echo "<script>alert('input correct pw');history.back();</script>";
         exit;
     }
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     } else {
-        echo "<script>console.log('$email');alert('input correct email');</script>";
+        echo "<script>console.log('$email');alert('input correct email');history.back();</script>";
         exit;
     }
 
-    $pw = md5($pw);
+    $pw = password_hash($pw, PASSWORD_BCRYPT);
 
     include 'setting.php';
 
